@@ -13,6 +13,17 @@
 /external_sd              auto     /dev/block/mmcblk0p1         /dev/block/mmcblk0   flags=display="SD Card";storage;wipeingui;removable
 /usb_otg                  auto     /dev/block/sdd              /dev/block/sdd1     flags=display="USB-OTG";storage;wipeingui;removable;backup=0
 
+#<src>				<mnt_point>		<type>		<mnt_flags and options>															<fs_mgr_flags>
+# Logical partitions
+system				/system			erofs		ro																	wait,slotselect,logical
+system				/system			ext4		ro																	wait,slotselect,logical
+vendor				/vendor			erofs		ro																	wait,slotselect,logical
+vendor				/vendor			ext4		ro																	wait,slotselect,logical
+product				/product		erofs		ro																	wait,slotselect,logical
+product				/product		ext4		ro																	wait,slotselect,logical
+system_ext			/system_ext		erofs		ro																	wait,slotselect,logical
+system_ext			/system_ext		ext4		ro																	wait,slotselect,logical
+
 # Other
 /protect_f                ext4      /dev/block/by-name/protect1                            flags=display=Protect_F;backup=1
 /protect_s                ext4      /dev/block/by-name/protect2                            flags=display=Protect_S;backup=1
